@@ -1,0 +1,31 @@
+.pokemon-list-wrapper {
+    margin: 2rem auto;
+    /* background-color: black; */
+    /* width: 200px;
+    text-align: center; */
+    /* width: 200px; */
+    margin-left: 50px;
+}
+.pokemon{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.but-in{
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    font-size: 20px;
+    border: none;
+    /* background-color: rgb(24, 62, 253); */
+    /* color: white; */
+}

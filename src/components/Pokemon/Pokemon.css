@@ -1,0 +1,11 @@
+.Pokemon{
+    /* width: 300px; */
+    flex-basis: 30%;
+}
+.image{
+    display: inline;
+    margin: 0 auto;
+}
+.p-div:hover{
+    background-color: beige;
+}
