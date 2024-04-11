@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './Pokemon.css';
 import { useEffect, useInsertionEffect } from 'react';
 
-function Pokemon({name,image,key,id}) {
+function Pokemon({name,image,id}) {
     return (
         <div className="Pokemon">
             <Link style={{textDecoration : 'none'}} to={`/pokemon/${id}`}>
