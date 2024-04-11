@@ -11,6 +11,14 @@ function PokemonList() {
     const [nexturl,setnexturl] = useState('');
     const [prevurl,setprevurl] = useState('');
 
+    const [pokemonliststate,setPokemonlistState] = useState({
+        pokemonlist : [],
+        isloading : true,
+        pokedex_url : "https://pokeapi.co/api/v2/pokemon/",
+        nexturl : '',
+        prevurl : ''
+    });
+
     let POKEMON_URL = "https://pokeapi.co/api/v2/pokemon/";
 
     async function PokemonDownload() {

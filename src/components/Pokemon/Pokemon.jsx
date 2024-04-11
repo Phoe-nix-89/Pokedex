@@ -3,7 +3,6 @@ import './Pokemon.css';
 import { useEffect, useInsertionEffect } from 'react';
 
 function Pokemon({name,image,key,id}) {
-    useEffect(() => {},[Pokemon]);
     return (
         <div className="Pokemon">
             <Link style={{textDecoration : 'none'}} to={`/pokemon/${id}`}>
