@@ -4,13 +4,20 @@ import { useParams} from "react-router-dom";
 import axios from 'axios';
 import usePokemonList from "../Hooks/usePokemonList";
 
-function PokemonDetails() {
+function PokemonDetails({ name }) {
     const {id} = useParams();
     const [pokemon,setpokemon] = useState({});
     async function PokemonDownload() {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        
-        const t = await axios.get(`https://pokeapi.co/api/v2/type/`+ response.data.types[0].type.name);
+        let response;
+    
+        if(name){
+            response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+        }
+        else{
+            response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        }
+
+        let t = await axios.get(`https://pokeapi.co/api/v2/type/`+ response.data.types[0].type.name);
 
         const al = t.data.pokemon.map((p) => {
             return p.pokemon.name;
@@ -64,7 +71,7 @@ function PokemonDetails() {
                 <div style={{display : 'flex' , flexDirection : 'column' , justifyContent : 'center' , alignItems : 'center'}}>
                 Names of more {pokemon.type} type pokemon are :-
                     <ul>
-                        {pokemon.rr && pokemon.rr.map((p) => <li>{p}</li>)};
+                        {pokemon.rr && pokemon.rr.map((p) => <li>{p}</li>)}
 
                         {/* {pokemon.rr && pokemon.rr.join(" , ")} */}
 
